@@ -2,8 +2,11 @@ require "cd"
 require "rspec"
 require "pry"
 
-
 describe('Cd') do
+  before() do
+    Cd.clear()
+  end
+
   describe("#album") do
     it("returns the name of the album") do
       test_cd = Cd.new("fireworks", "katy")
@@ -31,6 +34,13 @@ describe('Cd') do
     end
   end
 
+  describe("#id") do
+    it("returns the id of the cd") do
+      test_cd = Cd.new("fireworks","katy")
+      test_cd.save()
+      expect(test_cd.id()).to(eq(1))
+    end
+  end
 
 
 

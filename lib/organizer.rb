@@ -1,32 +1,33 @@
-# class Organizer
-#   @@cds = []
-#
-#   define_method(:initialize) do |album,artist|
-#     @album = album
-#     @artist = artist
-#   end
-#
-#   define_method(:album) do
-#     @album
-#   end
-#
-#   define_method(:artist)do
-#      @artist
-#   end
-#
-#   define_method(:add) do
-#     @add
-#   end
-#
-#   define_singleton_method(:all)do
-#     @@cds
-#   end
-#
-#   define_method(:save)do
-#     @@cds.push(self)
-#   end
-#
-#   define_singleton_method(:clear) do
-#    @@cds = []
-#  end
-# end
+class Organizer
+
+@@cd_array = []
+
+  define_method (:initialize) do |album|
+    @album = album
+    @id = @@cd_array.length().+(1)
+    @cds = []
+  end
+
+  define_method(:album) do
+    @album
+  end
+
+  define_method(:cds) do
+    @cds
+  end
+
+  define_method (:all) do
+    @@cd_array
+  end
+
+  # define_method (:add_cd) do |album, artist|
+  #   cd = Cd.create(album, artist)
+  #   @@cds_array << cd
+  #   cd
+  # end
+
+  define_method (:add_cd) do |cd|
+    @cds << cd
+  end
+
+end

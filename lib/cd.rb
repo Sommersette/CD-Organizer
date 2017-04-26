@@ -5,10 +5,15 @@ class Cd
   define_method(:initialize) do |album,artist|
     @album = album
     @artist = artist
+    @id = @@cds.length().+(1)
   end
 
   define_method(:album) do
     @album
+  end
+
+  define_method(:id) do
+    @id
   end
 
   define_method(:artist) do
